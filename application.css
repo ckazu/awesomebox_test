@@ -1,0 +1,164 @@
+body {
+  background: rgba(204, 255, 51, 0.2);
+  margin: 12px 0 0; }
+  body header {
+    text-align: center; }
+    body header h1 {
+      line-height: 1em;
+      margin: 0;
+      font-size: 4em;
+      font-family: 'Covered By Your Grace', cursive; }
+      body header h1 + p {
+        width: 15em;
+        color: white;
+        font-weight: bold;
+        font-size: .8em;
+        background: #667f19;
+        margin: 0 auto; }
+    body header h2 {
+      color: #7f1966;
+      font-size: 1.25em;
+      margin: .25em auto 1em; }
+      body header h2 ~ p {
+        line-height: .5em; }
+    body header nav {
+      margin-top: 3em; }
+      body header nav ul li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 .5em;
+        border-bottom: 1px solid #999999; }
+        body header nav ul li:hover {
+          border-bottom: 3px solid #28a3cc;
+          cursor: pointer; }
+  body #result {
+    color: #333f0c;
+    font-size: 1.25em;
+    font-family: "Inconsolata";
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 80px;
+    height: 20px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: gray 1px 1px 1px;
+    text-align: right;
+    z-index: 9999; }
+  body #field {
+    color: #666666;
+    font-size: 2em;
+    font-family: 'Inconsolata', monospace; }
+    body #field ul {
+      margin: 1em;
+      padding: 1em;
+      line-height: 1.5em;
+      background: #000;
+      position: relative;
+      -webkit-transition: all .5s ease-out; }
+      body #field ul:before, body #field ul:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #333333;
+        -webkit-box-shadow: 0 15px 10px #333333;
+        -moz-box-shadow: 0 15px 10px #333333;
+        box-shadow: 0 15px 10px #333333;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg); }
+      body #field ul:after {
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto; }
+      body #field ul:not(.current) {
+        background: #333; }
+      body #field ul li {
+        display: inline-block;
+        padding-right: .5em;
+        border-bottom: 1px solid #666666; }
+        body #field ul li.current {
+          border-bottom: 3px solid #33ccff; }
+        body #field ul li.correct, body #field ul li.wrong {
+          -webkit-animation: enter .1s ease-in-out 1; }
+        body #field ul li span {
+          display: inline-block;
+          letter-spacing: -0.5em;
+          margin-right: .5em;
+          padding: 0; }
+          body #field ul li span.current {
+            color: #33ccff; }
+          body #field ul li span.correct {
+            color: #ccff33;
+            -webkit-animation: correct 0.5s ease-out 1; }
+          body #field ul li span.wrong {
+            color: #ff33cc;
+            -webkit-animation: mistake .1s ease-in-out 1; }
+          body #field ul li span.wrong:first-letter {
+            color: #666666; }
+  body #tweet-result {
+    display: none;
+    text-align: center;
+    padding: 1em; }
+  body #footer {
+    height: 5em;
+    display: none;
+    background: #141905;
+    color: #666666;
+    text-align: center;
+    padding-top: 4em;
+    font-size: .8em; }
+
+@-webkit-keyframes mistake {
+  0% {
+    color: #fff; }
+
+  25% {
+    color: inherit; }
+
+  50% {
+    color: #fff;
+    -webkit-transform: rotate(0deg); }
+
+  60% {
+    -webkit-transform: rotate(60deg); }
+
+  70% {
+    -webkit-transform: rotate(-450deg); }
+
+  75% {
+    color: inherit; }
+
+  80% {
+    -webkit-transform: rotate(15deg); }
+
+  90% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-webkit-keyframes correct {
+  0% {
+    color: rgba(204, 255, 51, 0.3); }
+
+  50% {
+    color: #ccff33; } }
+
+@-webkit-keyframes enter {
+  0% {
+    -webkit-transform: scale(0.97); }
+
+  70% {
+    -webkit-transform: scale(1.03); } }
